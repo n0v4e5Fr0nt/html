@@ -7,31 +7,18 @@
 	<style>
 		body {
 			background-color: black;
-			margin: 0;
-			height: 100vh;
-			display: flex;
-			justify-content: center;
-			align-items: center;
 		}
 
 		.caveira {
 			color: green;
 			font-size: 10vw;
 			text-align: center;
+			margin-top: 10vh;
 		}
-        
-        .gameover {
-            color: white;
-            font-size: 5vw;
-            text-align: center;
-        }
 	</style>
 </head>
 <body>
-	<div>
-		<div class="caveira">
-			<pre>
-                           
+	<div class="caveira">	
 ███████████████████████████
 ███████▀▀▀░░░░░░░▀▀▀███████
 ████▀░░░░░░░░░░░░░░░░░▀████
@@ -51,11 +38,6 @@
 ███████▄░░░░░░░░░░░▄███████
 ██████████▄▄▄▄▄▄▄██████████
 ███████████████████████████
-			</pre>
-		</div>
-		<div class="gameover">
-			Game Over
-		</div>
 	</div>
 
 	<script>
@@ -64,7 +46,6 @@
 			let index = 0;
 			const intervalId = setInterval(function() {
 				document.querySelector(".caveira").style.color = cores[index];
-                document.querySelector(".gameover").style.color = cores[index];
 				index = (index + 1) % cores.length;
 			}, 200);
 		}
