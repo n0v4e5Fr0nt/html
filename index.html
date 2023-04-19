@@ -2,19 +2,12 @@
 <html>
 <head>
 	<title>Game Over</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<style>
+	<style type="text/css">
 		body {
 			background-color: black;
-			color: green;
-			text-align: center;
-			font-size: 5vw;
-			margin: 0;
-			padding: 0;
 		}
 		.blink {
-			animation: blinker 0.3s linear infinite;
+			animation: blinker 0.6s linear infinite;
 		}
 		@keyframes blinker {
 			50% {
@@ -23,21 +16,22 @@
 		}
 		.rainbow {
 			background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
-			background-size: 200%;
-			animation: rainbow 2s linear infinite;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			animation: rainbow 5s linear infinite;
 		}
 		@keyframes rainbow {
 			0% {
-				background-position: left;
+				background-position: 0 0;
 			}
 			100% {
-				background-position: right;
+				background-position: 400% 0;
 			}
 		}
 	</style>
 </head>
 <body>
-	<h1>
+	<h1 class="rainbow blink">
 ███████████████████████████
 ███████▀▀▀░░░░░░░▀▀▀███████
 ████▀░░░░░░░░░░░░░░░░░▀████
@@ -57,7 +51,7 @@
 ███████▄░░░░░░░░░░░▄███████
 ██████████▄▄▄▄▄▄▄██████████
 ███████████████████████████
-  </h1>
-	<h2 class="blink rainbow">GAME OVER</h2>
+	</h1>
 </body>
 </html>
+
