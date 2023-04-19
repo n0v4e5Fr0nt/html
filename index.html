@@ -1,57 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Game Over</title>
-	<style type="text/css">
+	<title>Caveira Piscando</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
 		body {
 			background-color: black;
 		}
-		.blink {
-			animation: blinker 0.6s linear infinite;
-		}
-		@keyframes blinker {
-			50% {
-				opacity: 0;
-			}
-		}
-		.rainbow {
-			background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			animation: rainbow 5s linear infinite;
-		}
-		@keyframes rainbow {
-			0% {
-				background-position: 0 0;
-			}
-			100% {
-				background-position: 400% 0;
-			}
+
+		.caveira {
+			color: green;
+			font-size: 100px;
+			text-align: center;
+			margin-top: 100px;
 		}
 	</style>
 </head>
 <body>
-	<h1 class="rainbow blink">
-███████████████████████████
-███████▀▀▀░░░░░░░▀▀▀███████
-████▀░░░░░░░░░░░░░░░░░▀████
-███│░░░░░░░░░░░░░░░░░░░│███
-██▌│░░░░░░░░░░░░░░░░░░░│▐██
-██░└┐░░░░░░░░░░░░░░░░░┌┘░██
-██░░└┐░░░░░░░░░░░░░░░┌┘░░██
-██░░┌┘▄▄▄▄▄░░░░░▄▄▄▄▄└┐░░██
-██▌░│██████▌░░░▐██████│░▐██
-███░│▐███▀▀░░▄░░▀▀███▌│░███
-██▀─┘░░░░░░░▐█▌░░░░░░░└─▀██
-██▄░░░▄▄▄▓░░▀█▀░░▓▄▄▄░░░▄██
-████▄─┘██▌░░░░░░░▐██└─▄████
-█████░░▐█─┬┬┬┬┬┬┬─█▌░░█████
-████▌░░░▀┬┼┼┼┼┼┼┼┬▀░░░▐████
-█████▄░░░└┴┴┴┴┴┴┴┘░░░▄█████
-███████▄░░░░░░░░░░░▄███████
-██████████▄▄▄▄▄▄▄██████████
-███████████████████████████
-	</h1>
+	<div class="caveira">
+		<!-- Cole o desenho aqui -->
+	</div>
+
+	<script>
+		function alternaCores() {
+			const cores = ["green", "red", "blue", "yellow", "orange", "purple", "pink", "teal", "silver", "gold"];
+			let index = 0;
+			const intervalId = setInterval(function() {
+				document.querySelector(".caveira").style.color = cores[index];
+				index = (index + 1) % cores.length;
+			}, 200);
+		}
+
+		alternaCores();
+	</script>
 </body>
 </html>
-
