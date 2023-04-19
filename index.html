@@ -7,18 +7,41 @@
 	<style>
 		body {
 			background-color: black;
+			margin: 0;
+			padding: 0;
+		}
+
+		.container {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
 		}
 
 		.caveira {
 			color: green;
 			font-size: 10vw;
 			text-align: center;
+			margin-top: 5vh;
+			line-height: 1;
+			font-family: monospace;
+			font-weight: bold;
+		}
+
+		.game-over {
+			color: red;
+			font-size: 5vw;
+			text-align: center;
 			margin-top: 10vh;
+			line-height: 1;
+			font-family: monospace;
+			font-weight: bold;
 		}
 	</style>
 </head>
 <body>
-	<div class="caveira">	
+	<div class="container">
+		<div class="caveira">
 ███████████████████████████
 ███████▀▀▀░░░░░░░▀▀▀███████
 ████▀░░░░░░░░░░░░░░░░░▀████
@@ -38,6 +61,11 @@
 ███████▄░░░░░░░░░░░▄███████
 ██████████▄▄▄▄▄▄▄██████████
 ███████████████████████████
+		</div>
+	</div>
+
+	<div class="game-over">
+		GAME OVER
 	</div>
 
 	<script>
@@ -48,6 +76,9 @@
 				document.querySelector(".caveira").style.color = cores[index];
 				index = (index + 1) % cores.length;
 			}, 200);
+			setTimeout(function() {
+				clearInterval(intervalId);
+			}, 3000);
 		}
 
 		alternaCores();
